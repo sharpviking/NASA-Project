@@ -14,7 +14,36 @@ describe('Test GET /launches', () => {
 
 
 describe('Test POST /launch', () => {
-    test('It should respond with 200 success', () => {
+    const completeLaunchData = {
+        mission: 'SKYROOT Enterprise',
+        rocket: 'FALCON 1729-C',
+        target: 'kepler-186 f',
+        launchDate: 'November 26,2027',
+    }
+
+
+    const launchDataWithoutDate = {
+        mission: 'SKYROOT Enterprise',
+        rocket: 'FALCON 1729-C',
+        target: 'kepler-186 f',
+
+    };
+
+
+    test('It should respond with 201 created', async () => {
+        const response = await request(app)
+            .post('/launches')
+            .send(completeLaunchData)
+            .expect('Content-Type', /json/)
+            .expect(201);
+
+
+        const requestDate = new Date(completeLaunchData.launchDate).valueOf();
+        const responseDate = new Date(response.body.launchDate).valueOf();
+        expect(responseDate).toBe(requestDate);
+
+
+        expect(response.body).toMatchObject(launchDataWithoutDate);
 
     });
 
