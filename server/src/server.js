@@ -23,12 +23,9 @@ mongoose.connection.on('error', (err) => {
 })
 
 async function startServer() {
-    await mongoose.connect(MONGO_URL, {
-        useNewUrlParser: true,
-        // useFindAndModify: false, => "no longer supported in mongoose"
-        // useCreateIndex: true,   => "no longer supported in mongoose"
-        useUnifiedTopology: true,
-    });
+    await mongoose.connect(MONGO_URL);
+
+
     await loadPlanetsData();
 
 
