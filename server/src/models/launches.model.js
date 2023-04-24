@@ -135,9 +135,9 @@ async function scheduleNewLaunch(launch) {
         kepler_name: launch.target,
     });
 
-    if (!planet) {
-        throw new Error('No matching planet found!');
-    }
+    // if (!planet) {
+    //     throw new Error('No matching planet found!');
+    // }
 
     const newFlightNumber = await getLatestFlightNumber() + 1;
     const newLaunch = Object.assign(launch, {
