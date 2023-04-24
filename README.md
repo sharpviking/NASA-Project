@@ -1,6 +1,6 @@
 # NASA-Project
 
-An exciting NASA launch dashboard for scheduling launching and keeping track of launches.
+An exciting NASA launch dashboard for scheduling, launching and keeping track of launches.
 
 Added spaceX Api to access spaceX launches.
 
