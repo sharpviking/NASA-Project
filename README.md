@@ -2,6 +2,7 @@
 
 
 #Getting Started
+
 1.Ensure you have Node.js installed.
 
 2.Create a free Mongo Atlas database online or start a local MongoDB database.
